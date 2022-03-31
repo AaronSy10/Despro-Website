@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div id="autodata">
-</div>
+@widget('DriverData')
 
 <!--<div class="container">
     <table class="table">
