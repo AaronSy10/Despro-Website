@@ -13,27 +13,30 @@ $result = mysqli_query($conn,$query);
 ?>
 
 
-    <table id="data-table">
-        <tr id="header">
-            <th>Driver</th>
-            <th>Location</th>
-            <th>Date<br>(yyyy-mm-dd)</th>
-            <th>Time<br>(hh:mm:ss)</th>
-            <th>Drowsiness Status</th>
+<table id="driverdata" class="table table-hover  table-bordered">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Driver</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date<br>(yyyy-mm-dd)</th>
+            <th scope="col">Time<br>(hh:mm:ss)</th>
+            <th scope="col">Drowsiness Status</th>
         </tr>
+    </thead>
 
-        <?php
-            while($rows=mysqli_fetch_assoc($result))
-            {
+    <?php
+        while($rows=mysqli_fetch_assoc($result))
+        {
         ?>
-            <tr>
-                <td><?php echo $rows['Driver']; ?></td>
-                <td><?php echo $rows['Location']; ?></td>
-                <td><?php echo $rows['Date']; ?></td>
-                <td><?php echo $rows['Time']; ?></td>
-                <td><?php echo $rows['Drowsiness Status']; ?></td>
-            </tr> 
-        <?php
+        <tr class="text-center">
+            <td scope="row"><?php echo $rows['Driver']; ?></td>
+            <td><?php echo $rows['Location']; ?></td>
+            <td><?php echo $rows['Date']; ?></td>
+            <td><?php echo $rows['Time']; ?></td>
+            <td class="drowsiness"><?php echo $rows['Drowsiness Status']; ?></td>
+        </tr> 
+    <?php
             }
             ?>
     </table>
+
