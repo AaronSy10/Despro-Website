@@ -13,7 +13,7 @@ $result = mysqli_query($conn,$query);
 ?>
 
 
-<table id="driverdata" class="table table-hover  table-bordered">
+<table id="driverdata" class="table table-hover" style="font-size: 1.5vh; border-bottom: 1px solid black;">
     <thead>
         <tr class="text-center">
             <th scope="col">Driver</th>
@@ -39,4 +39,21 @@ $result = mysqli_query($conn,$query);
             }
             ?>
     </table>
+
+<script>
+
+    var j = document.getElementById("driverdata").rows.length;
+    for (let i = 0; i<=j; i++)
+    {
+        if(document.getElementsByClassName("drowsiness")[i]!= null){
+            var state = document.getElementsByClassName("drowsiness")[i].innerHTML;
+            if (state == "Drowsy"){
+                document.getElementsByClassName("drowsiness")[i].style.backgroundColor = "#FF6961";
+            }
+            else if (state == "Awake"){
+                document.getElementsByClassName("drowsiness")[i].style.backgroundColor = "#89E894";
+            }
+        }
+    }
+</script>
 

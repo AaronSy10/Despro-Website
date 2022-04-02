@@ -22,19 +22,20 @@
     </head>
     <body class="antialiased">
             <div class="relative flex items-center justify-center min-h-screen"style="color:white;">
-                <div style="position:absolute; background: rgba(0, 0, 0, 0.6); height:100vh; width: 100%; background-repeat: no-repeat; background-size: 100% 100%;">
-                <div style="position: absolute; height:100vh; width: 100%; background-image: url('/Assets/wallpaper.png');  background-repeat: no-repeat; background-size: 100% 100%; background-attachment: fixed; filter: blur(5px); z-index:-2;"></div>
+                <div style="position:absolute; background: rgba(0, 0, 0, 0.6); height:100%; width: 100%; background-repeat: no-repeat; background-size: 100% 100%;">
+                <div style="position: absolute; height:100%; width: 100%; background-image: url('/Assets/wallpaper.png');  background-repeat: no-repeat; background-size: 100% 100%; background-attachment: fixed; filter: blur(5px); z-index:-2;"></div>
                 </div>
                 <div class="container" style="z-index: 2;background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 25px; margin:5px;">
                     <div class="grid grid-cols-1 md:grid-cols-1">
-                        <div class="text-center" style=""><h1 style="font-size:64px">Drowsiness Tracking System</h1></div>
-                        <div class="text-center" style="margin-bottom: 40px; font-size:25px;">AN IOT-BASED DROWSINESS DETECTION AND PREVENTION SYSTEM<br>
+                        <div class="text-center" style=""><h1 style="font-size: 5vh">Drowsiness Tracking System</h1></div>
+                        <div class="text-center" style="margin-bottom: 40px; font-size:3vh;">AN IOT-BASED DROWSINESS DETECTION AND PREVENTION SYSTEM<br>
                             USING FACE LANDMARK DETECTION AND PERCLOS CALCULATION 
                             <br>FOR ROAD FREIGHT TRANSPORT
                         </div>
                         @if (Route::has('login'))
                             <div class="text-center px-6 py-4"style="width: 200px; height: 70px;background-color: #f0bf5d; margin: auto;border-radius: 50px;">
                                 @auth
+                                    <a href="{{ url('/home') }}" style="font-size:25px;">Home</a>
                                 @else
                                     <a href="{{ route('login') }}" style="font-size:25px;">Log in</a>
                                     <!--@if (Route::has('register'))
